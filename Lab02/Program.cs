@@ -31,9 +31,9 @@ namespace Lab02
             int y4 = int.Parse(Console.ReadLine());
             rectangulo.p4 = new Punto(x4, y4);
 
-
             Console.WriteLine("Area del rectangulo es " + rectangulo.CalcularArea());
             Console.WriteLine("Perimetro del rectangulo es " + rectangulo.CalcularPerimetro());
+            Console.WriteLine("El rectangulo es real ? -- " + rectangulo.validarExistencia());
 
             Console.Read();
 

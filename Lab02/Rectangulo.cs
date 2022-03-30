@@ -37,5 +37,45 @@ namespace Lab02
             return dh + dh + dv + dv;
         }
 
+        public Boolean validarTriangulosRectangulos(Punto pb, Punto pa, Punto pc) {
+
+            double dh = CalcularDistancia(pa, pc);
+            double dv = CalcularDistancia(pa, pb);
+            double Hipotenusa = Math.Sqrt(Math.Pow(dh, 2) + Math.Pow(dv, 2));
+
+            double igualdad = Math.Sqrt(Math.Pow(dh, 2) + Math.Pow(dv, 2));
+
+            if (Hipotenusa == igualdad)
+            {
+                Console.WriteLine(igualdad);
+                Console.WriteLine(Hipotenusa);
+                return true;
+
+            }
+            else
+            {
+                Console.WriteLine(igualdad);
+                Console.WriteLine(Hipotenusa);
+                return false;
+            }
+
+        }
+
+        public Boolean validarExistencia() {
+
+            double area = CalcularDistancia(p2,p1) * CalcularDistancia(p4,p1);
+
+            Boolean t1 = validarTriangulosRectangulos(p4, p1, p2);
+            Boolean t2 = validarTriangulosRectangulos(p3, p2, p1);
+
+            if (t1 == t2 && area != 0) {
+
+                return true;
+
+            }
+            
+            return false;
+        }
+
     }
 }
